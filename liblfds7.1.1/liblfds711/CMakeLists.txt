@@ -1,0 +1,82 @@
+find_path(LIB_INC
+        HINTS ./inc
+        NAMES liblfds711.h)
+
+find_path(LIB_STRUCTURE_INC
+        HINTS ./inc/liblfds711
+        NAMES lfds711_misc.h)
+
+add_library(lfds SHARED
+        src/lfds711_btree_addonly_unbalanced/lfds711_btree_addonly_unbalanced_cleanup.c
+        src/lfds711_btree_addonly_unbalanced/lfds711_btree_addonly_unbalanced_get.c
+        src/lfds711_btree_addonly_unbalanced/lfds711_btree_addonly_unbalanced_init.c
+        src/lfds711_btree_addonly_unbalanced/lfds711_btree_addonly_unbalanced_insert.c
+        src/lfds711_btree_addonly_unbalanced/lfds711_btree_addonly_unbalanced_query.c
+        src/lfds711_freelist/lfds711_freelist_cleanup.c
+        src/lfds711_freelist/lfds711_freelist_init.c
+        src/lfds711_freelist/lfds711_freelist_pop.c
+        src/lfds711_freelist/lfds711_freelist_push.c
+        src/lfds711_freelist/lfds711_freelist_query.c
+        src/lfds711_hash_addonly/lfds711_hash_addonly_cleanup.c
+        src/lfds711_hash_addonly/lfds711_hash_addonly_get.c
+        src/lfds711_hash_addonly/lfds711_hash_addonly_init.c
+        src/lfds711_hash_addonly/lfds711_hash_addonly_insert.c
+        src/lfds711_hash_addonly/lfds711_hash_addonly_iterate.c
+        src/lfds711_hash_addonly/lfds711_hash_addonly_query.c
+        src/lfds711_list_addonly_singlylinked_ordered/lfds711_list_addonly_singlylinked_ordered_cleanup.c
+        src/lfds711_list_addonly_singlylinked_ordered/lfds711_list_addonly_singlylinked_ordered_get.c
+        src/lfds711_list_addonly_singlylinked_ordered/lfds711_list_addonly_singlylinked_ordered_init.c
+        src/lfds711_list_addonly_singlylinked_ordered/lfds711_list_addonly_singlylinked_ordered_insert.c
+        src/lfds711_list_addonly_singlylinked_ordered/lfds711_list_addonly_singlylinked_ordered_query.c
+        src/lfds711_list_addonly_singlylinked_unordered/lfds711_list_addonly_singlylinked_unordered_cleanup.c
+        src/lfds711_list_addonly_singlylinked_unordered/lfds711_list_addonly_singlylinked_unordered_get.c
+        src/lfds711_list_addonly_singlylinked_unordered/lfds711_list_addonly_singlylinked_unordered_init.c
+        src/lfds711_list_addonly_singlylinked_unordered/lfds711_list_addonly_singlylinked_unordered_insert.c
+        src/lfds711_list_addonly_singlylinked_unordered/lfds711_list_addonly_singlylinked_unordered_query.c
+        src/lfds711_misc/lfds711_misc_globals.c
+        src/lfds711_misc/lfds711_misc_internal_backoff_init.c
+        src/lfds711_misc/lfds711_misc_query.c
+        src/lfds711_prng/lfds711_prng_init.c
+        src/lfds711_queue_bounded_manyproducer_manyconsumer/lfds711_queue_bounded_manyproducer_manyconsumer_cleanup.c
+        src/lfds711_queue_bounded_manyproducer_manyconsumer/lfds711_queue_bounded_manyproducer_manyconsumer_dequeue.c
+        src/lfds711_queue_bounded_manyproducer_manyconsumer/lfds711_queue_bounded_manyproducer_manyconsumer_enqueue.c
+        src/lfds711_queue_bounded_manyproducer_manyconsumer/lfds711_queue_bounded_manyproducer_manyconsumer_init.c
+        src/lfds711_queue_bounded_manyproducer_manyconsumer/lfds711_queue_bounded_manyproducer_manyconsumer_query.c
+        src/lfds711_queue_bounded_singleproducer_singleconsumer/lfds711_queue_bounded_singleproducer_singleconsumer_cleanup.c
+        src/lfds711_queue_bounded_singleproducer_singleconsumer/lfds711_queue_bounded_singleproducer_singleconsumer_dequeue.c
+        src/lfds711_queue_bounded_singleproducer_singleconsumer/lfds711_queue_bounded_singleproducer_singleconsumer_enqueue.c
+        src/lfds711_queue_bounded_singleproducer_singleconsumer/lfds711_queue_bounded_singleproducer_singleconsumer_init.c
+        src/lfds711_queue_bounded_singleproducer_singleconsumer/lfds711_queue_bounded_singleproducer_singleconsumer_query.c
+        src/lfds711_queue_unbounded_manyproducer_manyconsumer/lfds711_queue_unbounded_manyproducer_manyconsumer_cleanup.c
+        src/lfds711_queue_unbounded_manyproducer_manyconsumer/lfds711_queue_unbounded_manyproducer_manyconsumer_dequeue.c
+        src/lfds711_queue_unbounded_manyproducer_manyconsumer/lfds711_queue_unbounded_manyproducer_manyconsumer_enqueue.c
+        src/lfds711_queue_unbounded_manyproducer_manyconsumer/lfds711_queue_unbounded_manyproducer_manyconsumer_init.c
+        src/lfds711_queue_unbounded_manyproducer_manyconsumer/lfds711_queue_unbounded_manyproducer_manyconsumer_query.c
+        src/lfds711_ringbuffer/lfds711_ringbuffer_cleanup.c
+        src/lfds711_ringbuffer/lfds711_ringbuffer_init.c
+        src/lfds711_ringbuffer/lfds711_ringbuffer_query.c
+        src/lfds711_ringbuffer/lfds711_ringbuffer_read.c
+        src/lfds711_ringbuffer/lfds711_ringbuffer_write.c
+        src/lfds711_stack/lfds711_stack_cleanup.c
+        src/lfds711_stack/lfds711_stack_init.c
+        src/lfds711_stack/lfds711_stack_pop.c
+        src/lfds711_stack/lfds711_stack_push.c
+        src/lfds711_stack/lfds711_stack_query.c)
+
+target_include_directories(lfds PRIVATE
+        src
+        src/lfds711_btree_addonly_unbalanced
+        src/lfds711_freelist
+        src/lfds711_hash_addonly
+        src/lfds711_list_addonly_singlylinked_ordered
+        src/lfds711_list_addonly_singlylinked_unordered
+        src/lfds711_misc
+        src/lfds711_prng
+        src/lfds711_queue_bounded_manyproducer_manyconsumer
+        src/lfds711_queue_bounded_singleproducer_singleconsumer
+        src/lfds711_queue_unbounded_manyproducer_manyconsumer
+        src/lfds711_ringbuffer
+        src/lfds711_stack
+        )
+
+target_include_directories(lfds PUBLIC ${LIB_INC} ${LIB_STRUCTURE_INC})
