@@ -1,2 +1,4 @@
-# Jetbrains Files
-.idea
+# CLion Files
+.idea/
+cmake-build*/
+build/
